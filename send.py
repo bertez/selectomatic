@@ -7,7 +7,7 @@ from template import CreateTemplate
 
 def process():
     with open(config.data) as data:
-        people = csv.DictReader(data, delimiter=';')
+        people = csv.DictReader(data)
 
         for item in people:
             template = CreateTemplate(item).get()
