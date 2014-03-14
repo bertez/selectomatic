@@ -1,0 +1,4 @@
+*.pyc
+.ropeproject
+real_config.py
+templates/gracias.template
