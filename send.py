@@ -11,7 +11,7 @@ def process():
 
         for item in people:
             template = CreateTemplate(item).get()
-            mail = SendMail(template, item['mail'], 'Probando envio de email')
+            mail = SendMail(template, item['mail'], 'Hello, {name}, this is a personal email'.format(name=item['short_name']))
             mail.send()
             print 'Email sent to {0}'.format(item['name'])
             time.sleep(2)

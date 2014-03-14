@@ -4,7 +4,7 @@ This is a personal message: {personal1}
 
 And this is another message: {personal2}
 
-you can add more columns to the csv and use in the template using: {column_name}
+you can add more columns to the csv and use in the template using: {{column_name}}
 
 Thank you for your time,
 
