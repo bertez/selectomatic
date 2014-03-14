@@ -9,11 +9,17 @@ def process():
     with open(config.data) as data:
         people = csv.DictReader(data)
 
-        for item in people:
-            template = CreateTemplate(item).get()
-            mail = SendMail(template, item['mail'], 'Hello, {name}, this is a personal email'.format(name=item['short_name']))
+        for person in people:
+            params = {key: value for key, value
+                      in person.items()
+                      if not key.startswith('_')}
+
+            template = CreateTemplate(params, person['_template']).get()
+
+            mail = SendMail(template, person['_mail'],
+                            'Hello, {0}, this is a personal \ email'.format(person['short_name']))
             mail.send()
-            print 'Email sent to {0}'.format(item['name'])
+            print 'Email sent to {0}'.format(person['_full_name'])
             time.sleep(2)
 
 

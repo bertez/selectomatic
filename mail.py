@@ -9,7 +9,9 @@ class SendMail(object):
         self.sender = sender
         self.content = MIMEText(content, _charset='utf-8')
         self.content['To'] = self.to
-        self.content['From'] = '{name} <{mail}>'.format(name=config.sender_name, mail=config.sender)
+        formatted_from = '{name} <{mail}>'.format(name=config.sender_name,
+                                                  mail=config.sender)
+        self.content['From'] = formatted_from
         self.content['Subject'] = subject
 
     def send(self):
