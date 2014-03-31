@@ -1,4 +1,7 @@
+.DS_Store
 *.pyc
 .ropeproject
 real_config.py
 templates/gracias.template
+data/*.*
+!data/candidates.csv
