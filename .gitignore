@@ -2,6 +2,7 @@
 *.pyc
 .ropeproject
 real_config.py
-templates/gracias.template
+templates/*.*
+!templates/example.template
 data/*.*
 !data/candidates.csv

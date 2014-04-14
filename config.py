@@ -4,6 +4,7 @@ sender = ''
 password = ''
 smtp = 'smtp.gmail.com:587'
 data = 'data/candidates.csv'
+bcc = ''
 
 try:
     from real_config import *

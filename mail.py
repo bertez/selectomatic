@@ -9,6 +9,7 @@ class SendMail(object):
         self.sender = sender
         self.content = MIMEText(content, _charset='utf-8')
         self.content['To'] = self.to
+        self.content['Bcc'] = config.bcc
         formatted_from = '{name} <{mail}>'.format(name=config.sender_name,
                                                   mail=config.sender)
         self.content['From'] = formatted_from
